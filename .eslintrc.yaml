@@ -72,7 +72,7 @@ rules:
   dot-notation: 'off'
   '@typescript-eslint/dot-notation': warn
   eqeqeq: [ warn, always, { 'null': 'ignore' } ]
-  grouped-accessor-pairs: warn
+  grouped-accessor-pairs: [ warn, getBeforeSet ]
   guard-for-in: 'off'
   max-classes-per-file: 'off'
   no-alert: 'off'
@@ -351,7 +351,7 @@ rules:
   '@typescript-eslint/ban-ts-comment': 'off'
   '@typescript-eslint/ban-tslint-comment': 'off'
   '@typescript-eslint/ban-types': 'off'
-  '@typescript-eslint/class-literal-property-style': 'off'
+  '@typescript-eslint/class-literal-property-style': [ warn, getters ]
   '@typescript-eslint/consistent-indexed-object-style': warn
   '@typescript-eslint/consistent-type-assertions': warn
   '@typescript-eslint/consistent-type-definitions': 'off'
@@ -360,7 +360,49 @@ rules:
   '@typescript-eslint/explicit-member-accessibility': [ warn, { accessibility: no-public, overrides: { parameterProperties: explicit } } ]
   '@typescript-eslint/explicit-module-boundary-types': 'off'
   '@typescript-eslint/member-delimiter-style': warn
-  # '@typescript-eslint/member-ordering': warn # TODO
+  # Accessors not supported: https://github.com/typescript-eslint/typescript-eslint/issues/929
+  '@typescript-eslint/member-ordering':
+    - warn
+    - default:
+      - signature
+
+      - public-static-field
+      - protected-static-field
+      - private-static-field
+
+      - public-abstract-field
+      - protected-abstract-field
+      - private-abstract-field
+
+      - public-decorated-field
+      - protected-decorated-field
+      - private-decorated-field
+
+      - public-instance-field
+      - protected-instance-field
+      - private-instance-field
+
+      - public-constructor
+      - protected-constructor
+      - private-constructor
+      - constructor
+
+      - public-static-method
+      - protected-static-method
+      - private-static-method
+
+      - public-abstract-method
+      - protected-abstract-method
+      - private-abstract-method
+
+      - public-decorated-method
+      - protected-decorated-method
+      - private-decorated-method
+
+      - public-instance-method
+      - protected-instance-method
+      - private-instance-method
+
   '@typescript-eslint/method-signature-style': 'off'
   '@typescript-eslint/naming-convention': 'off'
   '@typescript-eslint/no-base-to-string': warn
