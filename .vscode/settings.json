@@ -1,0 +1,9 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": false
+	},
+	"eslint.options": {
+		"configFile": "./.vscode/.eslintrc.yaml"
+	},
+	"eslint.validate": [ "typescript" ],
+}
