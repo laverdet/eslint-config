@@ -338,7 +338,8 @@ rules:
   # prefer-template: warn # `@typescript-eslint/restrict-plus-operands` is better anyway
   require-yield: warn
   rest-spread-spacing: warn
-  # sort-imports: warn # TODO
+  # Declarations aren't autofixable which is *super* annoying in practice
+  sort-imports: [ warn, { ignoreDeclarationSort: true } ]
   symbol-description: warn
   template-curly-spacing: warn
   yield-star-spacing: warn
@@ -354,9 +355,9 @@ rules:
   '@typescript-eslint/consistent-indexed-object-style': warn
   '@typescript-eslint/consistent-type-assertions': warn
   '@typescript-eslint/consistent-type-definitions': 'off'
-  '@typescript-eslint/consistent-type-imports': 'off'
+  '@typescript-eslint/consistent-type-imports': [ warn, { disallowTypeAnnotations: false } ]
   '@typescript-eslint/explicit-function-return-type': 'off'
-  # '@typescript-eslint/explicit-member-accessibility': [ warn, { accessibility: no-public } ]
+  '@typescript-eslint/explicit-member-accessibility': [ warn, { accessibility: no-public, overrides: { parameterProperties: explicit } } ]
   '@typescript-eslint/explicit-module-boundary-types': 'off'
   '@typescript-eslint/member-delimiter-style': warn
   # '@typescript-eslint/member-ordering': warn # TODO
