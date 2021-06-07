@@ -139,7 +139,7 @@ rules:
   no-useless-concat: warn
   no-useless-escape: warn
   no-useless-return: warn
-  no-void: [ warn, { allowAsStatement: true } ]
+  no-void: 'off'
   no-warning-comments: 'off'
   no-with: warn
   prefer-named-capture-group: warn
