@@ -180,7 +180,7 @@ rules:
   block-spacing: warn
   brace-style: 'off'
   '@typescript-eslint/brace-style': [ warn, 1tbs, { allowSingleLine: true } ]
-  camelcase: warn
+  camelcase: [ warn, { properties: 'never', ignoreDestructuring: true, ignoreImports: true, ignoreGlobals: true } ]
   capitalized-comments: 'off'
   comma-dangle: 'off'
   '@typescript-eslint/comma-dangle': [ warn, always-multiline ]
